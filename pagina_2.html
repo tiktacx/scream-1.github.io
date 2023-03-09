@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Página 2</title>
+	<style>
+		body {
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+
+		img {
+			display: block;
+			margin: auto;
+			padding-top: 50px;
+			max-width: 100%;
+			height: auto;
+		}
+
+		form {
+			margin-top: 50px;
+			font-size: 24px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		input[type="radio"] {
+			margin: 10px;
+		}
+
+		input[type="submit"] {
+			margin-top: 20px;
+			background-color: white;
+			color: black;
+			font-size: 24px;
+			padding: 10px;
+			border-radius: 10px;
+			border: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<img src="https://pyxis.nymag.com/v1/imgs/2eb/50e/f4e0e7dd6cde0f496d53c6e319906a974a-scream.2x.rsocial.w600.jpg" alt="Imagen">
+	<form>
+		<h2>¿Quién era el asesino en Scream 1?</h2>
+		<label>
+			<input type="radio" name="answer" value="1">
+			Stu Macher
+		</label>
+		<label>
+			<input type="radio" name="answer" value="2">
+			Billy Loomis
+		</label>
+		<label>
+			<input type="radio" name="answer" value="3">
+			Sidney Prescott
+		</label>
+		<label>
+			<input type="radio" name="answer" value="4">
+			Dewey Riley
+		</label>
+		<button id="submit-btn"><input type="submit" value="Enviar"></button>
+	</form>
+	<script>
+		const submitBtn = document.querySelector("#submit-btn");
+		submitBtn.addEventListener("click", (event) => {
+			event.preventDefault();
+			const answer = document.querySelector('input[name="answer"]:checked').value;
+			if (answer === "2") {
+				window.location.href = "pagina_3.html";
+			} else {
+				window.location.href = "you_died.html";
+			}
+		});
+	</script>
+</body>
+</html>

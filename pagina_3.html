@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Página 3</title>
+	<style>
+		body {
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+
+		img {
+			display: block;
+			margin: auto;
+			padding-top: 50px;
+			max-width: 100%;
+			height: auto;
+		}
+
+		form {
+			margin-top: 50px;
+			font-size: 24px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		input[type="radio"] {
+			margin: 10px;
+		}
+
+		input[type="submit"] {
+			margin-top: 20px;
+			background-color: white;
+			color: black;
+			font-size: 24px;
+			padding: 10px;
+			border-radius: 10px;
+			border: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<img src="https://resizing.flixster.com/ljvKIayxS4ni7Dinz4Kl8eAvS-A=/740x380/v2/https://statcdn.fandango.com/MPX/image/NBCU_Fandango/195/647/thumb_1B125744-60A8-4DBE-9C33-F53F9C282455.jpg" alt="Imagen">
+	<form>
+		<p>¿Quién interpretaba al asesino?</p>
+		<label>
+			<input type="radio" name="answer" value="Brad Pitt">
+			Brad Pitt
+		</label>
+		<label>
+			<input type="radio" name="answer" value="2">
+			Johnny Deep
+		</label>
+		<label>
+			<input type="radio" name="answer" value="Charlie Sheen">
+			Charlie Sheen
+		</label>
+		<label>
+			<input type="radio" name="answer" value="Pedro el fabuloso">
+			Pedro el fabuloso
+		</label>
+		<button id="submit-btn"><input type="submit" value="Enviar"> </button>
+	</form>
+    <script>
+		const submitBtn = document.querySelector("#submit-btn");
+		submitBtn.addEventListener("click", (event) => {
+			event.preventDefault();
+			const answer = document.querySelector('input[name="answer"]:checked').value;
+			if (answer === "2") {
+				window.location.href = "sobreviviste.html";
+			} else {
+				window.location.href = "you_died.html";
+			}
+		});
+	</script>
+</body>
+</html>

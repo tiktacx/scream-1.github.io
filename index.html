@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mi Página Web</title>
+    <style>
+      body {
+        background-color: black;
+        text-align: center;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+      #startButton {
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="mainImage" src="https://phantom-marca.unidadeditorial.es/73d026cde43722814f8daa5ce45430c0/resize/1200/f/jpg/assets/multimedia/imagenes/2022/01/13/16420714109499.jpg" alt="BIENVENIDA AL JUEGO" />
+    <button id="startButton">EMPEZAR</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script>
+      const mainImage = document.getElementById("mainImage");
+      const startButton = document.getElementById("startButton");
+
+      startButton.addEventListener("click", () => {
+        gsap.to(mainImage, { duration: 3, scale: 2, onComplete: function() { window.location.href = "pagina_1.html"; } });
+      });
+    </script>
+  </body>
+</html>
